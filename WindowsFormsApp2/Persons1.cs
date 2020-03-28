@@ -17,6 +17,14 @@ namespace WindowsFormsApp2
             if (button.Text != "")
             {
                 pictureBox.Load("../../Pictures/Persons/" + button.Text + ".jpg");
+
+                for (int i = 0; i < Filters.persons.Length; i++)
+                {
+                    if (button.Text == Filters.persons[i].name)
+                    {
+                        pictureBox.Image = Filters.persons[i].pix.Image;
+                    }
+                }
             }
             else
             {
@@ -97,9 +105,8 @@ namespace WindowsFormsApp2
 
 
         private void button1_Click(object sender, EventArgs e)
-        {            
-            prsn f = new prsn((Button)sender);
-            f.Show();
+        {
+            Filters.button2_Click(sender, e);
         }
 
         private void Persons1_Load(object sender, EventArgs e)

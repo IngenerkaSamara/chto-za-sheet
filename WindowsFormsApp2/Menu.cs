@@ -15,6 +15,7 @@ namespace WindowsFormsApp2
         public Menu()
         {
             InitializeComponent();
+            Filters.FillPersons();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,6 +47,11 @@ namespace WindowsFormsApp2
         {
             TEAM f = new TEAM();
             f.Show();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
